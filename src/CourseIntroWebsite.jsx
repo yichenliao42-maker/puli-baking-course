@@ -32,7 +32,7 @@ const highlightImage = {
   src: "https://i.ibb.co/KxK9Y2zS/zzz.png",
   alt: "報名前重點整理",
   title: "報名前先看這幾點",
-  points: ["符合資格免費上課", "生活津貼最高 $53,100", "冷氣教室＋專業設備", "結訓後就業輔導"],
+  points: ["符合資格免費上課", "符合條件可申領\n生活津貼最高 $53,100", "冷氣教室＋專業設備", "結訓後就業輔導"],
 };
 
 const curriculumImages = [
@@ -122,7 +122,7 @@ export default function CourseIntroWebsite() {
 
               <div className="mt-10 grid max-w-2xl grid-cols-2 gap-4 md:grid-cols-3">
                 <Stat label="符合資格" value="免費" />
-                <Stat label="生活津貼" value="$53,100" highlight />
+                <Stat label="符合條件可申領" value="生活津貼最高 $53,100" highlight />
                 <Stat label="環境" value="冷氣" />
                 <Stat label="設備" value="專業" />
                 <Stat label="方向" value="雙證照" />
@@ -168,7 +168,7 @@ export default function CourseIntroWebsite() {
                   {highlightImage.points.map((point) => (
                     <div key={point} className="flex items-center gap-4 rounded-2xl bg-orange-50 px-5 py-5">
                       <CheckCircle2 className="shrink-0 text-orange-600" size={26} />
-                      <p className="text-xl font-black leading-8 text-stone-800 md:text-2xl">{point}</p>
+                      <p className="whitespace-pre-line text-xl font-black leading-8 text-stone-800 md:text-2xl">{point}</p>
                     </div>
                   ))}
                 </div>
@@ -233,17 +233,14 @@ export default function CourseIntroWebsite() {
               <SimpleCard title="招訓名額" text="本班招訓 30 名，甄試合格後通知錄訓。" />
               <SimpleCard title="參訓保障" text="訓練期間享有勞工保險及職災保險。" />
               <Card className="rounded-3xl border-orange-100 bg-orange-50 shadow-sm md:col-span-2">
-                <CardContent className="p-7">
-                  <h3 className="text-3xl font-black text-orange-900">費用</h3>
-                  <div className="mt-5 grid gap-4 md:grid-cols-2">
-                    <div className="rounded-2xl bg-white p-5 shadow-sm">
-                      <p className="text-xl font-black text-orange-700">符合資格</p>
-                      <p className="mt-2 text-lg font-bold text-stone-700">免費上課</p>
-                    </div>
-                    <div className="rounded-2xl bg-white p-5 shadow-sm">
-                      <p className="text-xl font-black">一般失業者</p>
-                      <p className="mt-2 text-lg font-bold text-stone-700">自付 NT$8,011</p>
-                    </div>
+                <CardContent className="p-7 md:p-10">
+                  <h3 className="text-3xl font-black text-orange-900 md:text-4xl">費用</h3>
+                  <div className="mt-6 rounded-[2rem] border border-orange-100 bg-white p-8 text-center shadow-sm md:p-10">
+                    <p className="text-2xl font-black text-orange-700 md:text-3xl">符合資格</p>
+                    <p className="mt-4 text-5xl font-black leading-tight text-stone-950 md:text-6xl">免費上課</p>
+                    <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-stone-600 md:text-lg">
+                      特定對象失業者可由政府全額補助，實際資格依審核結果為準。
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -289,7 +286,7 @@ function Stat({ label, value, highlight = false }) {
       }`}
     >
       <p className={`text-sm font-bold ${highlight ? "text-orange-100" : "text-stone-500"}`}>{label}</p>
-      <p className={`mt-2 whitespace-nowrap text-2xl font-black leading-tight ${highlight ? "text-white" : "text-stone-950"}`}>
+      <p className={`mt-2 text-xl font-black leading-snug ${highlight ? "text-white" : "text-stone-950"}`}>
         {value}
       </p>
     </div>
